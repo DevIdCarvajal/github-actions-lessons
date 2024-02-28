@@ -13,6 +13,7 @@
 - Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 - Node.js / npm: [https://nodejs.org/es/download](https://nodejs.org/es/download)
 - Git: [https://git-scm.com/download/](https://git-scm.com/download/)
+- Extensión GH Actions: [https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions](https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions)  
 - Extensión YAML: [https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ## 1. Conceptos básicos

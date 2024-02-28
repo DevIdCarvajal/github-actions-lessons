@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Installing Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Installing dependencies
@@ -26,7 +26,7 @@ jobs:
       - name: Running unit tests
         run: npm run test
       - name: Running e2e tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           command: npx cypress run
           start: npm start

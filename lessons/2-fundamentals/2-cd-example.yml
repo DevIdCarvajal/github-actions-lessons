@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Installing Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Installing dependencies
@@ -27,11 +27,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Downloading project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Installing Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Installing dependencies
@@ -48,11 +48,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Downloading project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Installing Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Installing dependencies
@@ -69,11 +69,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Downloading project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Installing Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Installing dependencies
@@ -83,7 +83,7 @@ jobs:
           name: build-version
           path: build
       - name: Running e2e tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           command: npx cypress run
           start: npm start
