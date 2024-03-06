@@ -46,3 +46,9 @@ Ejemplo ( `hw.yml` ):
           - name: Mostrar fecha
             run: date
           - run: ls -l
+
+## Referencias
+
+[Tutorial de introducción](https://www.adictosaltrabajo.com/2020/10/28/introduccion-a-github-actions-sintaxis-basica/)
+
+[Pricing](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions)

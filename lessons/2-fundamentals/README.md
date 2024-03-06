@@ -32,15 +32,15 @@ Que a su vez pueden ser comandos ejecutables por consola en el runner asignado, 
 
 ## Referencias
 
-[Tutorial de introducción](https://www.adictosaltrabajo.com/2020/10/28/introduccion-a-github-actions-sintaxis-basica/)
+[Workflows](https://docs.github.com/en/actions/using-workflows/about-workflows)  
+[Jobs](https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow)
 
-[Workflows](https://docs.github.com/es/actions/using-workflows/about-workflows)  
-[Jobs](https://docs.github.com/es/actions/using-jobs/using-jobs-in-a-workflow)  
-[Contextos](https://docs.github.com/es/actions/learn-github-actions/contexts)  
-[Expresiones](https://docs.github.com/es/actions/learn-github-actions/expressions)  
-[Matrices](https://docs.github.com/es/actions/using-jobs/using-a-matrix-for-your-jobs)  
-[GH Script](https://github.com/marketplace/actions/github-script)  
-[Empaquetado](https://docs.github.com/es/actions/publishing-packages/about-packaging-with-github-actions)  
+[Contextos](https://docs.github.com/en/actions/learn-github-actions/contexts)  
+[Expresiones](https://docs.github.com/en/actions/learn-github-actions/expressions)  
+[Matrices](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs)  
+[GH Script](https://github.com/marketplace/actions/github-script)
+
+[Empaquetado](https://docs.github.com/en/actions/publishing-packages/about-packaging-with-github-actions)  
 [Documentación Paquetes](https://docs.github.com/packages)
 
 [Marketplace GitHub Actions](https://github.com/marketplace?type=actions)  
