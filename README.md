@@ -1,4 +1,4 @@
-# Github Actions
+# GitHub Actions
 
 ## Objetivos
 
@@ -15,4 +15,4 @@
 
 ## Referencias
 
-[Documentación oficial GitHub Actions](https://docs.github.com/es/actions)
+[Documentación oficial GitHub Actions](https://docs.github.com/en/actions)
