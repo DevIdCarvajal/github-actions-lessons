@@ -18,16 +18,17 @@
 
 ## 1. Conceptos básicos
 
-- Workflow: Procedimiento automatizado que se añade a un repositorio de Github.
-- Job: Conjunto de steps que se ejecutan en un runner de nuestro proceso.
-- Step: Tarea individual que puede ejecutar comandos dentro de un job.
-- Action: Comandos de ejecución del proceso, ejecutados en un step para crear un job.
+- **Workflow**: Conjunto de jobs que se lanzarán cuando ocurra un evento en un repositorio.
+- **Job**: Secuencia de steps que se ejecutan en un runner concreto, instanciado en tiempo de ejecución.
+- **Step**: Tarea individual que puede ejecutar comandos o acciones.
+- **Command**: Instrucción por consola de comandos del sistema operativo del runner.
+- **Action**: Proceso predefinido que realiza unas labores concretas, disponible en el marketplace de GitHub.
 
 ## 2. Hola mundo
 
 El primer paso para empezar a usar GitHub Actions (GHA) es crear la carpeta `.github/workflows/`, que albergará los workflows a realizar en forma de ficheros YAML.
 
-Ejemplo ( `hw.yml` ):
+Ejemplo ( `.github/workflows/hw.yml` ):
 
     name: Hello World example
 
