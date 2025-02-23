@@ -1,0 +1,33 @@
+name: Basic workflow example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  predeploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Downloading project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Installing Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: npm ci
+      - name: Linting
+        run: npx eslint --ext .js,.jsx .
+      - name: Building
+        run: npm run build
+      - name: Running unit tests
+        run: npm run test
+      - name: Running e2e tests
+        uses: cypress-io/github-action@v6
+        with:
+          command: npx cypress run
+          start: npm start
+          wait-on: http://localhost:3000/

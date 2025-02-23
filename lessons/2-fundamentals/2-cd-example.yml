@@ -1,0 +1,108 @@
+name: Full deployment example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Downloading project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Installing Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: npm ci
+      - name: Linting
+        run: npx eslint --ext .js,.jsx .
+  
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Downloading project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Installing Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: npm ci
+      - name: Building
+        run: npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build-version
+          path: build
+  
+  test:
+    needs: [lint, build]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Downloading project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Installing Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: npm ci
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-version
+          path: build
+      - name: Running unit tests
+        run: npm run test
+  
+  e2e:
+    needs: [lint, build]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Downloading project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Installing Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: npm ci
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-version
+          path: build
+      - name: Running e2e tests
+        uses: cypress-io/github-action@v6
+        with:
+          command: npx cypress run
+          start: npm start
+          wait-on: http://localhost:3000/
+  
+  deploy:
+    needs: [test, e2e]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: build-version
+          path: build
+      - name: Deploying to Netlify
+        if: ${{ github.event_name == 'push' }}
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=build --prod

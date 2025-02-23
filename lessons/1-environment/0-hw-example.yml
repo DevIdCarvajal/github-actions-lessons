@@ -1,0 +1,17 @@
+name: Hello World example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Mostrar mensaje
+        run: |
+          echo "Hola mundo!"
+      - name: Mostrar fecha
+        run: date
+      - run: ls -l
