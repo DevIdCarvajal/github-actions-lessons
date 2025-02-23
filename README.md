@@ -15,4 +15,4 @@
 
 ## Referencias
 
-[Documentación oficial GitHub Actions](https://docs.github.com/en/actions)
+- [Documentación oficial GitHub Actions](https://docs.github.com/en/actions)

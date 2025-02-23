@@ -1,0 +1,15 @@
+name: 'Backup Code Action'
+description: 'Creates a ZIP backup of the repository code'
+inputs:
+  output-path:
+    description: 'Path where the ZIP file will be saved'
+    required: false
+    default: './backup'
+  filename:
+    description: 'Name of the ZIP file'
+    required: false
+    default: 'code-backup'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

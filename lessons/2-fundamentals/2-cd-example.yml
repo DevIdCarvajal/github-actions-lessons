@@ -17,7 +17,7 @@ jobs:
       - name: Installing Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Installing dependencies
         run: npm ci
       - name: Linting
@@ -33,12 +33,12 @@ jobs:
       - name: Installing Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Installing dependencies
         run: npm ci
       - name: Building
         run: npm run build
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: build-version
           path: build
@@ -54,10 +54,10 @@ jobs:
       - name: Installing Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Installing dependencies
         run: npm ci
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: build-version
           path: build
@@ -75,10 +75,10 @@ jobs:
       - name: Installing Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Installing dependencies
         run: npm ci
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: build-version
           path: build
@@ -94,7 +94,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Download build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-version
           path: build

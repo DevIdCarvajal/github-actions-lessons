@@ -2,9 +2,9 @@
 
 ## Índice
 
-[0. Prerrequisitos](#0-prerrequisitos)  
-[1. Conceptos básicos](#1-conceptos-basicos)  
-[2. Hola mundo](#2-hola-mundo)
+- [0. Prerrequisitos](#0-prerrequisitos)
+- [1. Conceptos básicos](#1-conceptos-basicos)
+- [2. Hola mundo](#2-hola-mundo)
 
 ## 0. Prerrequisitos
 
@@ -13,7 +13,7 @@
 - Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 - Node.js / npm: [https://nodejs.org/es/download](https://nodejs.org/es/download)
 - Git: [https://git-scm.com/download/](https://git-scm.com/download/)
-- Extensión GH Actions: [https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions](https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions)  
+- Extensión GH Actions: [https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions](https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions)
 - Extensión YAML: [https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ## 1. Conceptos básicos
@@ -30,26 +30,27 @@ El primer paso para empezar a usar GitHub Actions (GHA) es crear la carpeta `.gi
 
 Ejemplo ( `.github/workflows/hw.yml` ):
 
-    name: Hello World example
+```yaml
+name: Hello World example
 
-    on:
-      push:
-        branches:
-          - main
+on:
+  push:
+    branches:
+      - main
 
-    jobs:
-      hello_world:
-        runs-on: ubuntu-18.04
-        steps:
-          - name: Mostrar mensaje
-            run: |
-              echo "Hola mundo!"
-          - name: Mostrar fecha
-            run: date
-          - run: ls -l
+jobs:
+  hello_world:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Mostrar mensaje
+        run: |
+          echo "Hola mundo!"
+      - name: Mostrar fecha
+        run: date
+      - run: ls -l
+```
 
 ## Referencias
 
-[Tutorial de introducción](https://www.adictosaltrabajo.com/2020/10/28/introduccion-a-github-actions-sintaxis-basica/)
-
-[Pricing](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions)
+- [Tutorial de introducción](https://www.adictosaltrabajo.com/2020/10/28/introduccion-a-github-actions-sintaxis-basica/)
+- [Pricing](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions)
