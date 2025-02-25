@@ -16,7 +16,7 @@ A partir de ahí, hay que definir los trabajos que realizará dicho flujo, con s
 ```yaml
 jobs:
   predeploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
 ```
 
@@ -33,7 +33,7 @@ steps:
     with:
       node-version: 20
   - name: Installing dependencies
-    run: npm ci
+    run: npm i
 ```
 
 ## Referencias

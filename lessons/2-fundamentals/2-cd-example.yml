@@ -8,7 +8,7 @@ on:
 jobs:
 
   lint:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Downloading project
         uses: actions/checkout@v4
@@ -19,12 +19,12 @@ jobs:
         with:
           node-version: 20
       - name: Installing dependencies
-        run: npm ci
+        run: npm i
       - name: Linting
         run: npx eslint --ext .js,.jsx .
   
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Downloading project
         uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: 20
       - name: Installing dependencies
-        run: npm ci
+        run: npm i
       - name: Building
         run: npm run build
       - uses: actions/upload-artifact@v4
@@ -45,7 +45,7 @@ jobs:
   
   test:
     needs: [lint, build]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Downloading project
         uses: actions/checkout@v4
@@ -56,7 +56,7 @@ jobs:
         with:
           node-version: 20
       - name: Installing dependencies
-        run: npm ci
+        run: npm i
       - uses: actions/download-artifact@v4
         with:
           name: build-version
@@ -66,7 +66,7 @@ jobs:
   
   e2e:
     needs: [lint, build]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Downloading project
         uses: actions/checkout@v4
@@ -77,7 +77,7 @@ jobs:
         with:
           node-version: 20
       - name: Installing dependencies
-        run: npm ci
+        run: npm i
       - uses: actions/download-artifact@v4
         with:
           name: build-version
@@ -91,7 +91,7 @@ jobs:
   
   deploy:
     needs: [test, e2e]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Download build
         uses: actions/download-artifact@v4

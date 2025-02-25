@@ -40,7 +40,7 @@ on:
 
 jobs:
   hello_world:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Mostrar mensaje
         run: |

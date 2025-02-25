@@ -7,7 +7,7 @@ on:
 
 jobs:
   predeploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Downloading project
         uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 20
       - name: Installing dependencies
-        run: npm ci
+        run: npm i
       - name: Linting
         run: npx eslint --ext .js,.jsx .
       - name: Building
